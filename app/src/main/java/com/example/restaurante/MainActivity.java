@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private TextView nameTextView;
     private TextView emailTextView;
     private TextView idTextView;
+    private Button vermesasdisponibles;
 
     private GoogleApiClient googleApiClient;
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        vermesasdisponibles = (Button) findViewById(R.id.mesasdisponibles);
 
         imageView = (ImageView) findViewById(R.id.imageView);
         nameTextView = (TextView) findViewById(R.id.nametextView);
@@ -74,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     setUserData(user);
+
                 } else {
                     goLoginScreen();
                 }
@@ -95,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
  }
 
 
+
     private void goLoginScreen() {
         Intent intent= new Intent(this,LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -106,11 +110,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     }
 
-//
-//        firebaseAuth.addAuthStateListener(firebaseAuthListener);
-//    }
-//
-
+    public void vermesas(View view) {
+        Intent intent= new Intent(this,MesasDisponibles.class);
+        startActivity(intent);
+    }
 
     public void logOut(View view) {
         firebaseAuth.signOut();
@@ -127,27 +130,23 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     });
 
     }
-//
-    public void revoke(View view) {
-        firebaseAuth.signOut();
 
-        Auth.GoogleSignInApi.revokeAccess(googleApiClient).setResultCallback(new ResultCallback<Status>() {
-            @Override
-
-            public void onResult(@NonNull Status status) {
-                if (status.isSuccess()) {
-                    goLoginScreen();
-                } else {
-                    Toast.makeText(getApplicationContext(), "No se pudo revocar la cuenta", Toast.LENGTH_SHORT).show();
-                } }
-        });
-    }
+//    public void revoke(View view) {
+//        firebaseAuth.signOut();
 //
-//    @Override
-//    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+//        Auth.GoogleSignInApi.revokeAccess(googleApiClient).setResultCallback(new ResultCallback<Status>() {
+//            @Override
 //
+//            public void onResult(@NonNull Status status) {
+//                if (status.isSuccess()) {
+//                    goLoginScreen();
+//                } else {
+//                    Toast.makeText(getApplicationContext(), "No se pudo revocar la cuenta", Toast.LENGTH_SHORT).show();
+//                } }
+//        });
 //    }
-//
+
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -155,4 +154,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
            firebaseAuth.removeAuthStateListener(firebaseAuthListener);
         }
     }
+
+
 }

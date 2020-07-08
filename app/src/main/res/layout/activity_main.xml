@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="252dp"
         android:layout_height="202dp"
-        android:layout_marginTop="173dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:orientation="vertical"
@@ -49,7 +49,7 @@
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="152dp"
         android:layout_marginEnd="160dp"
         android:layout_marginRight="160dp"
         android:onClick="logOut"
@@ -58,15 +58,29 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
-        android:id="@+id/revoke"
+        android:id="@+id/mesasdisponibles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginRight="160dp"
-        android:onClick="revoke"
-        android:text="Revoke"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginRight="108dp"
+        android:onClick="vermesas"
+        android:text="Ver mesas disponibles"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginBottom="24dp"
+        android:text="ESTADO DE BATERIA"
+        app:layout_constraintBottom_toTopOf="@+id/mesasdisponibles"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
