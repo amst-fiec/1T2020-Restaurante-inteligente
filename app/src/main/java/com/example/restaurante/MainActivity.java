@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private ImageView imageView;
     private TextView nameTextView;
     private TextView emailTextView;
-    private TextView idTextView;
+  //  private TextView idTextView;
     private Button vermesasdisponibles;
 
     private GoogleApiClient googleApiClient;
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         imageView = (ImageView) findViewById(R.id.imageView);
         nameTextView = (TextView) findViewById(R.id.nametextView);
         emailTextView = (TextView) findViewById(R.id.emailtextView);
-        idTextView = (TextView) findViewById(R.id.idtextView);
+        //idTextView = (TextView) findViewById(R.id.idtextView);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private void setUserData(FirebaseUser user) {
         nameTextView.setText(user.getDisplayName());
         emailTextView.setText(user.getEmail());
-       idTextView.setText(user.getUid());
+      // idTextView.setText(user.getUid());
         Glide.with(this).load(user.getPhotoUrl()).into(imageView);
     }
 
