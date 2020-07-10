@@ -1,14 +1,18 @@
 package com.example.restaurante;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -32,12 +36,16 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private FirebaseAuth.AuthStateListener firebaseauthListener;
     private int RC_SIGN_IN=1;
     private GoogleApiClient googleApiClient;
+    private ImageView logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+//        Resources res = getResources();
+//        Drawable drawable = ResourcesCompat.getDrawable(res, R.drawable.logo, null);
+//        Resources res2 = getResources();
+//        Drawable drawable2 = ResourcesCompat.getDrawable(res, R.drawable.nombre, null);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -46,7 +54,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
-
+//        ImageView logo= findViewById(R.id.Logo);
+//        ImageView nombre= findViewById(R.id.Nombre);
+//
         SignInButton signInButton = findViewById(R.id.signbutton);
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +65,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 startActivityForResult(intent, RC_SIGN_IN);
             }
         });
+        signInButton.setSize(SignInButton.SIZE_WIDE);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseauthListener= new FirebaseAuth.AuthStateListener(){
            @Override
