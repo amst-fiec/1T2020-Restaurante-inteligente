@@ -18,6 +18,7 @@ public class Userdata extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userdata);
+
         Intent intent = getIntent();
         HashMap<String, String> info_user = (HashMap<String, String>)intent.getSerializableExtra("info_user");
         txt_id = findViewById(R.id.txt_userId);

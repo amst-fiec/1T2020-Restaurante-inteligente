@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    HashMap<String, String> info_user;
     TextView txt_id, txt_name, txt_email;
     ImageView imv_photo;
     Button btn_logout;
@@ -24,18 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = getIntent();
+       info_user = (HashMap<String, String>)intent.getSerializableExtra("info_user");
 
-//        Intent intent = getIntent();
-//        HashMap<String, String> info_user = (HashMap<String, String>)intent.getSerializableExtra("info_user");
-//        txt_id = findViewById(R.id.txt_userId);
-//        txt_name = findViewById(R.id.txt_nombre);
-//        txt_email = findViewById(R.id.txt_correo);
-//        imv_photo = findViewById(R.id.imv_foto);
-//        txt_id.setText(info_user.get("user_id"));
-//        txt_name.setText(info_user.get("user_name"));
-//        txt_email.setText(info_user.get("user_email"));
-//        String photo = info_user.get("user_photo");
-//        Picasso.with(getApplicationContext()).load(photo).into(imv_photo);
+
     }
     public void cerrarSesion(View view){
         FirebaseAuth.getInstance().signOut();
@@ -43,5 +35,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LoginActivity.class);
         intent.putExtra("msg", "cerrarSesion");
         startActivity(intent);
+    }
+    public void usuarioData(View view){
+        HashMap<String, String> info= this.info_user;
+        Intent intent = new Intent(this, Userdata.class);
+        intent.putExtra("info_user", info);
+        startActivity(intent);
+
     }
 }

@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
             info_user.put("user_photo", String.valueOf(user.getPhotoUrl()));
             info_user.put("user_id", user.getUid());
             finish();
-            Intent intent = new Intent(this, Userdata.class);
+            Intent intent = new Intent(this, MainActivity.class);
             intent.putExtra("info_user", info_user);
             startActivity(intent);
 
