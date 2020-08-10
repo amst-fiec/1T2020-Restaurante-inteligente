@@ -91,6 +91,12 @@ public class LoginActivity extends AppCompatActivity {
         if (user != null) {
 
             HashMap<String, String> info_user = new HashMap<String, String>();
+            if (user.getPhoneNumber() != null){
+                info_user.put("user_phone", user.getPhoneNumber());
+
+            }   else{
+                info_user.put("user_phone", "Sin registro de numero celular");
+                 }
             info_user.put("user_name", user.getDisplayName());
             info_user.put("user_email", user.getEmail());
             info_user.put("user_photo", String.valueOf(user.getPhotoUrl()));

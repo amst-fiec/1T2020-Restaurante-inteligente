@@ -17,9 +17,7 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     HashMap<String, String> info_user;
-    TextView txt_id, txt_name, txt_email;
-    ImageView imv_photo;
-    Button btn_logout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

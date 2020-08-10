@@ -4,26 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context=".LoginActivity">
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="135dp"
-        android:layout_height="122dp"
+        android:layout_width="306dp"
+        android:layout_height="327dp"
         android:layout_gravity="center"
         android:layout_marginTop="200px"
-        app:srcCompat="@drawable/logo" />
-    <TextView
-        android:id="@+id/txt_"
-        android:layout_width="match_parent"
-        android:layout_height="224dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textSize="24sp"
-        tools:text="Inicio de sesion con google" />
+        app:srcCompat="@drawable/logoynombre" />
+
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="iniciarSesion"
+        android:background="@drawable/botonredondo"
+        android:textColor="#FFFFFFFF"
+        android:textSize="16dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text="Iniciar sesion" />
 </LinearLayout>

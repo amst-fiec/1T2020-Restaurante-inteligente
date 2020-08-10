@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 
 public class Userdata extends AppCompatActivity {
-    TextView txt_id, txt_name, txt_email;
+    TextView numerotxt, txt_name, txt_email;
     ImageView imv_photo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +21,13 @@ public class Userdata extends AppCompatActivity {
 
         Intent intent = getIntent();
         HashMap<String, String> info_user = (HashMap<String, String>)intent.getSerializableExtra("info_user");
-        txt_id = findViewById(R.id.txt_userId);
         txt_name = findViewById(R.id.txt_nombre);
         txt_email = findViewById(R.id.txt_correo);
+        numerotxt = findViewById(R.id.numero);
         imv_photo = findViewById(R.id.imv_foto);
-        txt_id.setText(info_user.get("user_id"));
-        txt_name.setText(info_user.get("user_name"));
-        txt_email.setText(info_user.get("user_email"));
+        numerotxt.setText("Numero celular:"+info_user.get("user_phone"));
+        txt_name.setText("Nombre:"+info_user.get("user_name").toUpperCase());
+        txt_email.setText("Correo:"+info_user.get("user_email"));
         String photo = info_user.get("user_photo");
         Picasso.with(getApplicationContext()).load(photo).into(imv_photo);
     }
