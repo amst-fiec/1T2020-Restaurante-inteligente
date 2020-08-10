@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Userdata"></activity>
+        <activity android:name=".buzon"></activity>
+        <activity android:name=".Userdata" />
         <activity android:name=".MesasDisponibles" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">

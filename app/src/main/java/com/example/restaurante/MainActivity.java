@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
-       info_user = (HashMap<String, String>)intent.getSerializableExtra("info_user");
+        info_user = (HashMap<String, String>)intent.getSerializableExtra("info_user");
 
 
     }
@@ -40,5 +40,9 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("info_user", info);
         startActivity(intent);
 
+    }
+    public void buzon(View view){
+        Intent intent = new Intent(this, buzon.class);
+        startActivity(intent);
     }
 }
