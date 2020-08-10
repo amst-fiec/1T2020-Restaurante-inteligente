@@ -19,6 +19,6 @@ public class buzon extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),
                         "Calificación enviada", Toast.LENGTH_SHORT);
         toast1.show();
-       
+
     }
 }
