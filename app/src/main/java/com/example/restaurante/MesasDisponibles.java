@@ -1,5 +1,7 @@
 package com.example.restaurante;
-
+/*
+Se muestra las mesas disponibles según la distribución del restaurante
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
