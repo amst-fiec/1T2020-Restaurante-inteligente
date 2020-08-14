@@ -45,4 +45,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, buzon.class);
         startActivity(intent);
     }
+    public void verMesas(View view){
+        startActivity(new Intent(this,MesasDisponibles.class));
+    }
 }
