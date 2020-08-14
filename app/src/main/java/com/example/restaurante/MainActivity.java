@@ -15,23 +15,28 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 
 
+
 public class MainActivity extends AppCompatActivity {
     HashMap<String, String> info_user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Intent intent = getIntent();
         info_user = (HashMap<String, String>)intent.getSerializableExtra("info_user");
 
 
     }
+
     public void cerrarSesion(View view){
         FirebaseAuth.getInstance().signOut();
         finish();
         Intent intent = new Intent(this, LoginActivity.class);
         intent.putExtra("msg", "cerrarSesion");
+
         startActivity(intent);
     }
     public void usuarioData(View view){
