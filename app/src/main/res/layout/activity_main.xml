@@ -21,10 +21,13 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="54dp"
+        android:foregroundGravity="center_vertical"
         android:gravity="center_vertical">
 
         <TableRow
             android:layout_width="match_parent"
+
             android:layout_height="match_parent">
 
             <ImageButton
@@ -47,6 +50,29 @@
 
         <TableRow
             android:layout_width="match_parent"
+            android:layout_marginTop="54dp"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                app:srcCompat="@drawable/baterias" />
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                app:srcCompat="@drawable/diagrama" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_marginTop="54dp"
             android:layout_height="match_parent">
 
             <ImageButton
@@ -66,14 +92,16 @@
                 android:background="#FFFFFF"
                 android:onClick="usuarioData"
                 app:srcCompat="@drawable/usuario" />
+        </TableRow><![CDATA[
+
+        />
+
+        ]]>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
         </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </TableLayout>
 </LinearLayout>
