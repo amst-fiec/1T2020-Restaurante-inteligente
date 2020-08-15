@@ -30,7 +30,7 @@
         android:layout_marginTop="21dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inicial"
-        app:srcCompat="@drawable/disponible" />
+        app:srcCompat="@drawable/mesafinal" />
 
     <TextView
         android:id="@+id/textView3"
@@ -52,7 +52,7 @@
         android:layout_marginTop="21dp"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/inicial"
-        app:srcCompat="@drawable/reservado" />
+        app:srcCompat="@drawable/mesafinal" />
 
     <TextView
         android:id="@+id/textView4"
@@ -65,125 +65,30 @@
         app:layout_constraintStart_toEndOf="@+id/ejemploRes"
         app:layout_constraintTop_toBottomOf="@+id/inicial" />
 
-    <TableLayout
-        android:layout_width="415dp"
-        android:layout_height="538dp"
+    <ImageView
+        android:id="@+id/fondo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
         android:layout_marginLeft="21dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="21dp"
         android:layout_marginRight="21dp"
-        android:layout_marginBottom="21dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ejemploRes"
-        app:layout_constraintVertical_bias="0.368">
+        app:srcCompat="@drawable/dispmesas" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/mesa1"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/disponible" />
-
-            <ImageView
-                android:id="@+id/mesa2"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/reservado" />
-
-            <ImageView
-                android:id="@+id/mesa3"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/reservado" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <ImageView
-                android:id="@+id/mesa4"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/reservado" />
-
-            <ImageView
-                android:id="@+id/mesa5"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/disponible" />
-
-            <ImageView
-                android:id="@+id/mesa6"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/reservado" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <ImageView
-                android:id="@+id/mesa7"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/reservado" />
-
-            <ImageView
-                android:id="@+id/mesa8"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/reservado" />
-
-            <ImageView
-                android:id="@+id/mesa9"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/reservado" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <ImageView
-                android:id="@+id/mesa10"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/disponible" />
-
-            <ImageView
-                android:id="@+id/mesa11"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/reservado" />
-
-            <ImageView
-                android:id="@+id/mesa12"
-                android:layout_width="84dp"
-                android:layout_height="84dp"
-                android:layout_margin="21dp"
-                app:srcCompat="@drawable/disponible" />
-        </TableRow>
-    </TableLayout>
+    <ImageView
+        android:id="@+id/mesa1"
+        android:layout_width="57dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="312dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fondo"
+        app:srcCompat="@drawable/mesafinal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

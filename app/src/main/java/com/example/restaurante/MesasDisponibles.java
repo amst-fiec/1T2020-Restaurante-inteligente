@@ -23,6 +23,8 @@ public class MesasDisponibles extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mesas_disponibles);
         lecturaFirebase();
+        ImageView mesares=findViewById(R.id.ejemploRes);
+        mesares.setColorFilter(Color.RED);
     }
     public void lecturaFirebase(){
         FirebaseDatabase database=FirebaseDatabase.getInstance();
@@ -32,16 +34,17 @@ public class MesasDisponibles extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 ImageView mesa1=findViewById(R.id.mesa1);
+                mesa1.setColorFilter(Color.RED);
                 ArrayList<String> lista=new ArrayList();
                 for(DataSnapshot datasnapshot:dataSnapshot.getChildren()){
                     lista.add(datasnapshot.getValue(String.class));
                 }
                 String estado=lista.get(0);
                 if(estado.equals("DE")){
-                    mesa1.setColorFilter(Color.GREEN);
+                    mesa1.setColorFilter(null);
                 }
-                if(estado.equals("OC")){
-                    mesa1.setColorFilter(Color.GREEN);
+                else{
+                    mesa1.setColorFilter(Color.RED);
                 }
             }
 
