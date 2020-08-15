@@ -25,6 +25,8 @@ public class MesasDisponibles extends AppCompatActivity {
         lecturaFirebase();
         ImageView mesares=findViewById(R.id.ejemploRes);
         mesares.setColorFilter(Color.RED);
+        ImageView mesa2=findViewById(R.id.mesa2);
+        mesa2.setColorFilter(Color.RED);
     }
     public void lecturaFirebase(){
         FirebaseDatabase database=FirebaseDatabase.getInstance();
@@ -33,6 +35,10 @@ public class MesasDisponibles extends AppCompatActivity {
         q.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 ImageView mesa1=findViewById(R.id.mesa1);
                 mesa1.setColorFilter(Color.RED);
                 ArrayList<String> lista=new ArrayList();
@@ -46,11 +52,6 @@ public class MesasDisponibles extends AppCompatActivity {
                 else{
                     mesa1.setColorFilter(Color.RED);
                 }
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
             }
 
             @Override
