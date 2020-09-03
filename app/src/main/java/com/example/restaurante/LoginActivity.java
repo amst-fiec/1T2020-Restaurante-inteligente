@@ -131,7 +131,6 @@ public class LoginActivity extends AppCompatActivity {
             info_user.put("user_phone", user.getPhoneNumber());
             check(user.getUid(),info_user);
 
-
         } else {
             FirebaseAuth.getInstance().signOut();
         }

@@ -73,12 +73,10 @@ public class Registro extends AppCompatActivity {
         if (spnLocale.getSelectedItem().toString().equals("Empleado")){
 
             user = new Usuario(user_uid,name,email,phone,photo, claveView.getText().toString());
-            System.out.println(user.getClave()+"HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             db.registrarUsuario(user_uid,user,this,info_user);
         }
         else {
             user = new Usuario(user_uid,name,email,phone,photo, clavecliente);
-            System.out.println(user.getClave()+"HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             db.registrarUsuario(user_uid,user,this,info_user);
         }
     }
