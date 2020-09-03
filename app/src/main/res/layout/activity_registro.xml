@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+
+    android:orientation="vertical"
+    tools:context=".Registro">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Completar Registro" />
+
+    <ImageView
+        android:id="@+id/imv_foto"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/Nameuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre y Apellido" />
+
+    <TextView
+        android:id="@+id/txt_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:text="nombres"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Correo Electronico" />
+
+    <TextView
+        android:id="@+id/txt_correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="correo"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/numero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Numero celular" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccione el tipo de Usuario" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/usuarios"/>
+
+    <TextView
+        android:id="@+id/clavetxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clave" />
+
+    <EditText
+        android:id="@+id/claveView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Ingrese clave de trabajador"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnregistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="registrar"
+        android:text="Registrar" />
+
+</LinearLayout>

@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         info_user = (HashMap<String, String>)intent.getSerializableExtra("info_user");
-
-
     }
 
     public void cerrarSesion(View view){

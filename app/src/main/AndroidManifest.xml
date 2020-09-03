@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".EstadoMesa"></activity>
+        <activity android:name=".Registro"></activity>
+        <activity android:name=".EstadoMesa" />
         <activity android:name=".buzon" />
         <activity android:name=".Userdata" />
         <activity android:name=".MesasDisponibles" />
