@@ -85,7 +85,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="115dp"
         android:layout_marginLeft="115dp"
-        android:layout_marginTop="312dp"
+        android:layout_marginTop="310dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/fondo"
@@ -95,10 +95,62 @@
         android:id="@+id/mesa2"
         android:layout_width="65dp"
         android:layout_height="67dp"
-        android:layout_marginStart="232dp"
-        android:layout_marginLeft="232dp"
+        android:layout_marginStart="235dp"
+        android:layout_marginLeft="235dp"
         android:layout_marginTop="340dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fondo"
+        app:srcCompat="@drawable/mesafinal" />
+
+    <ImageView
+        android:id="@+id/mesa4"
+        android:layout_width="65dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="235dp"
+        android:layout_marginLeft="235dp"
+        android:layout_marginTop="272dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fondo"
+        app:srcCompat="@drawable/mesafinal" />
+
+    <ImageView
+        android:id="@+id/mesa5"
+        android:layout_width="65dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="165dp"
+        android:layout_marginLeft="165dp"
+        android:layout_marginTop="340dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fondo"
+        app:srcCompat="@drawable/mesafinal" />
+
+    <ImageView
+        android:id="@+id/mesa6"
+        android:layout_width="65dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="165dp"
+        android:layout_marginLeft="165dp"
+        android:layout_marginTop="384dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fondo"
+        app:srcCompat="@drawable/mesafinal" />
+
+    <ImageView
+        android:id="@+id/mesa3"
+        android:layout_width="65dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="235dp"
+        android:layout_marginLeft="235dp"
+        android:layout_marginTop="305dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/fondo"
         app:srcCompat="@drawable/mesafinal" />
