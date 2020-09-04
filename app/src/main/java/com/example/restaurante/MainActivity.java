@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mostrarNotificacion();
-                System.out.println("Se muestra notificacion");
             }
 
             @Override
