@@ -27,7 +27,7 @@ public class MesasDisponibles extends AppCompatActivity {
         mesares.setColorFilter(Color.RED);
         ImageView mesa2=findViewById(R.id.mesa2);
         mesa2.setColorFilter(Color.RED);
-    }
+    }//Necesita aun Notificaciones
     public void lecturaFirebase(){
         FirebaseDatabase database=FirebaseDatabase.getInstance();
         DatabaseReference referencia=database.getReference("devide");
