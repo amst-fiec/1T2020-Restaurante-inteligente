@@ -20,52 +20,43 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class MesasDisponibles extends AppCompatActivity {
+    public ArrayList<ImageView> imagenes=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mesas_disponibles);
-        lecturaFirebase1();
-        lecturaFirebase2();
-        lecturaFirebase3();
-        lecturaFirebase4();
-        lecturaFirebase5();
-        lecturaFirebase6();
         ImageView mesares=findViewById(R.id.ejemploRes);
         mesares.setColorFilter(Color.RED);
+        ImageView mesa1 = findViewById(R.id.mesa1);
+        ImageView mesa2 = findViewById(R.id.mesa2);
+        ImageView mesa3 = findViewById(R.id.mesa3);
+        ImageView mesa4 = findViewById(R.id.mesa4);
+        ImageView mesa5 = findViewById(R.id.mesa5);
+        ImageView mesa6 = findViewById(R.id.mesa6);
+
+        imagenes.set(0,mesa1);
+        imagenes.set(1,mesa2);
+        imagenes.set(2,mesa3);
+        imagenes.set(3,mesa4);
+        imagenes.set(4,mesa5);
+        imagenes.set(5,mesa6);
+        lecturaFirebase();
     }//Necesita aun Notificaciones
-    public void lecturaFirebase1(){
+    public void lecturaFirebase(){
         DatabaseReference referencia=FirebaseDatabase.getInstance().getReference();
         referencia.child("dispositivos").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ImageView mesa1 = findViewById(R.id.mesa1);
-                    String estado = dataSnapshot.child("device1").child("estado").getValue().toString();
-                    System.out.println("La mesa 1 tiene un estado de: "+estado);
-                    if (estado.equals("DE")) {
-                        mesa1.setColorFilter(null);
+                int cont=0;
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                    Dispositivo dispositivo=data.getValue(Dispositivo.class);
+                    if(dispositivo.getEstado().equals("DE")){
+                        imagenes.get(cont).setColorFilter(null);
                     }
-                    if (estado.equals("OC")){
-                        mesa1.setColorFilter(Color.RED);
+                    if (dispositivo.getEstado().equals("OC")) {
+                        imagenes.get(cont).setColorFilter(Color.RED);
                     }
-                }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
-    }
-    public void lecturaFirebase2(){
-        DatabaseReference referencia=FirebaseDatabase.getInstance().getReference();
-        referencia.child("dispositivos").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ImageView mesa2 = findViewById(R.id.mesa2);
-                String estado = dataSnapshot.child("device2").child("estado").getValue().toString();
-                System.out.println("La mesa 2 tiene un estado de: "+estado);
-                if (estado.equals("DE")) {
-                    mesa2.setColorFilter(null);
-                }
-                if (estado.equals("OC")){
-                    mesa2.setColorFilter(Color.RED);
+                    cont++;
                 }
             }
             @Override
@@ -73,84 +64,5 @@ public class MesasDisponibles extends AppCompatActivity {
             }
         });
     }
-    public void lecturaFirebase3(){
-        DatabaseReference referencia=FirebaseDatabase.getInstance().getReference();
-        referencia.child("dispositivos").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ImageView mesa3 = findViewById(R.id.mesa3);
-                String estado = dataSnapshot.child("device3").child("estado").getValue().toString();
-                System.out.println("La mesa 3 tiene un estado de: "+estado);
-                if (estado.equals("DE")) {
-                    mesa3.setColorFilter(null);
-                }
-                if (estado.equals("OC")){
-                    mesa3.setColorFilter(Color.RED);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
-    }
-    public void lecturaFirebase4(){
-        DatabaseReference referencia=FirebaseDatabase.getInstance().getReference();
-        referencia.child("dispositivos").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ImageView mesa4 = findViewById(R.id.mesa4);
-                String estado = dataSnapshot.child("device4").child("estado").getValue().toString();
-                System.out.println("La mesa 4 tiene un estado de: "+estado);
-                if (estado.equals("DE")) {
-                    mesa4.setColorFilter(null);
-                }
-                if (estado.equals("OC")){
-                    mesa4.setColorFilter(Color.RED);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
-    }
-    public void lecturaFirebase5(){
-        DatabaseReference referencia=FirebaseDatabase.getInstance().getReference();
-        referencia.child("dispositivos").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ImageView mesa5 = findViewById(R.id.mesa5);
-                String estado = dataSnapshot.child("device1").child("estado").getValue().toString();
-                System.out.println("La mesa 5 tiene un estado de: "+estado);
-                if (estado.equals("DE")) {
-                    mesa5.setColorFilter(null);
-                }
-                if (estado.equals("OC")){
-                    mesa5.setColorFilter(Color.RED);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
-    }
-    public void lecturaFirebase6(){
-        DatabaseReference referencia=FirebaseDatabase.getInstance().getReference();
-        referencia.child("dispositivos").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ImageView mesa6 = findViewById(R.id.mesa6);
-                String estado = dataSnapshot.child("device6").child("estado").getValue().toString();
-                System.out.println("La mesa 6 tiene un estado de: "+estado);
-                if (estado.equals("DE")) {
-                    mesa6.setColorFilter(null);
-                }
-                if (estado.equals("OC")){
-                    mesa6.setColorFilter(Color.RED);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });
-    }
+
 }
