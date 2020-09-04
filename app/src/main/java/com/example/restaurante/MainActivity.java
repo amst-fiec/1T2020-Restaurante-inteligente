@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, buzon.class);
         startActivity(intent);
     }
+    public void verestadisticas(View view){
+        Intent intent = new Intent(this, EstadoMesa.class);
+        startActivity(intent);
+    }
     public void verMesas(View view){
         startActivity(new Intent(this,MesasDisponibles.class));
     }

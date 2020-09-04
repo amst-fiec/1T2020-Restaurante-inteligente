@@ -24,7 +24,6 @@ public class EstadoMesa extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        PieChartView pieChartView = findViewById(R.id.chart);
         pieChartView = findViewById(R.id.chart);
 
         List pieData = new ArrayList<>();//cargar valores de la base de la DB
