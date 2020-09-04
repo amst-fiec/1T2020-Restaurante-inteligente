@@ -1,21 +1,40 @@
 package com.example.restaurante;
 
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.media.RingtoneManager;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 public class Fcm extends FirebaseMessagingService {
-    @Override
-    public void onNewToken(@NonNull String s) {
-        super.onNewToken(s);
-        Log.e("Token","Mi token es: "+s);
-    }
 
     @Override
-    public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
+    public void onMessageReceived(@NonNull final RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
+        mostrarnotificacion(remoteMessage.getNotification().getTitle(),remoteMessage.getNotification().getBody());
+
+    }
+    public void mostrarnotificacion(String title, String body){
+        Intent intent = new Intent(this,MesasDisponibles.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        PendingIntent pendingIntent= PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_ONE_SHOT);
+
+        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(this);
+        notificationBuilder.setSmallIcon(R.drawable.ic_launcher_background);
+        notificationBuilder.setContentTitle(title);
+        notificationBuilder.setContentText(body);
+        notificationBuilder.setAutoCancel(true);
+        notificationBuilder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+        notificationBuilder.setContentIntent(pendingIntent);
     }
 }
