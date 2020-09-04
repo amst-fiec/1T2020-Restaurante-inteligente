@@ -55,4 +55,9 @@ public class MainActivity extends AppCompatActivity {
     public void verMesas(View view){
         startActivity(new Intent(this,MesasDisponibles.class));
     }
+
+    public void verbaterias(View view){
+        Intent intent = new Intent(this, EstadoBateria.class);
+        startActivity(intent);
+    }
 }
