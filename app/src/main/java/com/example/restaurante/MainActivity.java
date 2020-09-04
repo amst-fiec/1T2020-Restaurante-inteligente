@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         info_user = (HashMap<String, String>)intent.getSerializableExtra("info_user");
-
-
     }
 
     public void cerrarSesion(View view){
@@ -56,5 +54,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void verMesas(View view){
         startActivity(new Intent(this,MesasDisponibles.class));
+    }
+
+    public void verbaterias(View view){
+        Intent intent = new Intent(this, EstadoBateria.class);
+        startActivity(intent);
     }
 }
