@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    claveuser = (String) dataSnapshot.getValue();
+                    claveuser = dataSnapshot.getValue().toString();
                 }
             }
 
@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
+
         referencia.child("dispositivos").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
