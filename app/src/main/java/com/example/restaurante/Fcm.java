@@ -1,6 +1,8 @@
 package com.example.restaurante;
 
+import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.util.Log;
@@ -25,16 +27,22 @@ public class Fcm extends FirebaseMessagingService {
 
     }
     public void mostrarnotificacion(String title, String body){
+
         Intent intent = new Intent(this,MesasDisponibles.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent= PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_ONE_SHOT);
 
-        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(this);
-        notificationBuilder.setSmallIcon(R.drawable.ic_launcher_background);
-        notificationBuilder.setContentTitle(title);
-        notificationBuilder.setContentText(body);
-        notificationBuilder.setAutoCancel(true);
-        notificationBuilder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
-        notificationBuilder.setContentIntent(pendingIntent);
+        NotificationCompat.Builder notificationBuilder=new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.logo)
+                .setContentTitle(title)
+                .setContentText(body)
+                .setAutoCancel(true)
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setContentIntent(pendingIntent);
+        System.out.println("El encabezado es:"+title);
+        System.out.println("La notificacion es: "+body);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0,notificationBuilder.build());
     }
 }

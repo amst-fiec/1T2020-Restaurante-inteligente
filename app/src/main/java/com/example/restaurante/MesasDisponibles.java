@@ -20,12 +20,13 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class MesasDisponibles extends AppCompatActivity {
-    public ArrayList<ImageView> imagenes=new ArrayList<>();
+    public ArrayList<ImageView> imagenes = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mesas_disponibles);
-        ImageView mesares=findViewById(R.id.ejemploRes);
+        ImageView mesares = findViewById(R.id.ejemploRes);
         mesares.setColorFilter(Color.RED);
         ImageView mesa1 = findViewById(R.id.mesa1);
         ImageView mesa2 = findViewById(R.id.mesa2);
@@ -34,23 +35,24 @@ public class MesasDisponibles extends AppCompatActivity {
         ImageView mesa5 = findViewById(R.id.mesa5);
         ImageView mesa6 = findViewById(R.id.mesa6);
 
-        imagenes.set(0,mesa1);
-        imagenes.set(1,mesa2);
-        imagenes.set(2,mesa3);
-        imagenes.set(3,mesa4);
-        imagenes.set(4,mesa5);
-        imagenes.set(5,mesa6);
+        imagenes.add(mesa1);
+        imagenes.add(mesa2);
+        imagenes.add(mesa3);
+        imagenes.add(mesa4);
+        imagenes.add(mesa5);
+        imagenes.add(mesa6);
         lecturaFirebase();
     }//Necesita aun Notificaciones
-    public void lecturaFirebase(){
-        DatabaseReference referencia=FirebaseDatabase.getInstance().getReference();
+
+    public void lecturaFirebase() {
+        DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
         referencia.child("dispositivos").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                int cont=0;
+                int cont = 0;
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
-                    Dispositivo dispositivo=data.getValue(Dispositivo.class);
-                    if(dispositivo.getEstado().equals("DE")){
+                    Dispositivo dispositivo = data.getValue(Dispositivo.class);
+                    if (dispositivo.getEstado().equals("DE")) {
                         imagenes.get(cont).setColorFilter(null);
                     }
                     if (dispositivo.getEstado().equals("OC")) {
@@ -59,10 +61,10 @@ public class MesasDisponibles extends AppCompatActivity {
                     cont++;
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
     }
-
 }
