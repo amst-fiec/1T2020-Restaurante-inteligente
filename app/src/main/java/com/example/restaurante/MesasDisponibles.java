@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 
 public class MesasDisponibles extends AppCompatActivity {
     public ArrayList<ImageView> imagenes = new ArrayList<>();
+    int disponibles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,9 @@ public class MesasDisponibles extends AppCompatActivity {
         imagenes.add(mesa5);
         imagenes.add(mesa6);
         lecturaFirebase();
+        if (disponibles==0){
+            Toast.makeText(this,"No se encuentra mesas disponibles",Toast.LENGTH_LONG).show();
+        }
     }//Necesita aun Notificaciones
 
     public void lecturaFirebase() {
@@ -50,10 +56,12 @@ public class MesasDisponibles extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 int cont = 0;
+                disponibles=0;
                 for (DataSnapshot data : dataSnapshot.getChildren()) {
                     Dispositivo dispositivo = data.getValue(Dispositivo.class);
                     if (dispositivo.getEstado().equals("DE")) {
                         imagenes.get(cont).setColorFilter(null);
+                        disponibles++;
                     }
                     if (dispositivo.getEstado().equals("OC")) {
                         imagenes.get(cont).setColorFilter(Color.RED);
