@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class MesasDisponibles extends AppCompatActivity {
     public ArrayList<ImageView> imagenes = new ArrayList<>();
-    int disponibles;
+    static public int disponibles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class MesasDisponibles extends AppCompatActivity {
         imagenes.add(mesa6);
         lecturaFirebase();
         if (disponibles==0){
-            Toast.makeText(this,"No hay mesas Disponibles",Toast.LENGTH_LONG);
+            Toast.makeText(this,"Lo sentimos, no hay mesas Disponibles",Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -68,7 +68,6 @@ public class MesasDisponibles extends AppCompatActivity {
                     }
                     cont++;
                 }
-
             }
 
             @Override
