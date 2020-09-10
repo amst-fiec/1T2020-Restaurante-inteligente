@@ -46,9 +46,9 @@ public class MesasDisponibles extends AppCompatActivity {
         imagenes.add(mesa6);
         lecturaFirebase();
         if (disponibles==0){
-            Toast.makeText(this,"No se encuentra mesas disponibles",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"No hay mesas Disponibles",Toast.LENGTH_LONG);
         }
-    }//Necesita aun Notificaciones
+    }
 
     public void lecturaFirebase() {
         DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
@@ -68,6 +68,7 @@ public class MesasDisponibles extends AppCompatActivity {
                     }
                     cont++;
                 }
+
             }
 
             @Override

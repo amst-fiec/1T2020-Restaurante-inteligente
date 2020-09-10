@@ -67,11 +67,11 @@
 
     <ImageView
         android:id="@+id/fondo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="365dp"
+        android:layout_height="575dp"
         android:layout_marginStart="21dp"
         android:layout_marginLeft="21dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="21dp"
         android:layout_marginEnd="21dp"
         android:layout_marginRight="21dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,76 +82,86 @@
 
     <ImageView
         android:id="@+id/mesa1"
-        android:layout_width="57dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginLeft="85dp"
-        android:layout_marginTop="310dp"
+        android:layout_width="365dp"
+        android:layout_height="575dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fondo"
-        app:srcCompat="@drawable/mesafinal" />
+        app:layout_constraintTop_toBottomOf="@+id/ejemploRes"
+        app:srcCompat="@drawable/mesa1" />
 
     <ImageView
         android:id="@+id/mesa2"
-        android:layout_width="65dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="196dp"
-        android:layout_marginLeft="196dp"
-        android:layout_marginTop="345dp"
+        android:layout_width="365dp"
+        android:layout_height="575dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fondo"
-        app:srcCompat="@drawable/mesafinal" />
-
-    <ImageView
-        android:id="@+id/mesa4"
-        android:layout_width="65dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="215dp"
-        android:layout_marginLeft="215dp"
-        android:layout_marginTop="275dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fondo"
-        app:srcCompat="@drawable/mesafinal" />
+        app:layout_constraintTop_toBottomOf="@+id/ejemploRes"
+        app:srcCompat="@drawable/mesa2" />
 
     <ImageView
         android:id="@+id/mesa3"
-        android:layout_width="65dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="305dp"
-        android:layout_marginLeft="305dp"
-        android:layout_marginTop="305dp"
+        android:layout_width="365dp"
+        android:layout_height="575dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fondo"
-        app:srcCompat="@drawable/mesafinal" />
+        app:layout_constraintTop_toBottomOf="@+id/ejemploRes"
+        app:srcCompat="@drawable/mesa3" />
 
     <ImageView
-        android:id="@+id/mesa6"
-        android:layout_width="60dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginLeft="152dp"
-        android:layout_marginTop="335dp"
+        android:id="@+id/mesa4"
+        android:layout_width="365dp"
+        android:layout_height="575dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fondo"
-        app:srcCompat="@drawable/mesafinal" />
+        app:layout_constraintTop_toBottomOf="@+id/ejemploRes"
+        app:srcCompat="@drawable/mesa4" />
 
     <ImageView
         android:id="@+id/mesa5"
-        android:layout_width="70dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="198dp"
-        android:layout_marginLeft="198dp"
-        android:layout_marginTop="383dp"
+        android:layout_width="365dp"
+        android:layout_height="575dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fondo"
-        app:srcCompat="@drawable/mesafinal" />
+        app:layout_constraintTop_toBottomOf="@+id/ejemploRes"
+        app:srcCompat="@drawable/mesa5" />
+
+    <ImageView
+        android:id="@+id/mesa6"
+        android:layout_width="365dp"
+        android:layout_height="575dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ejemploRes"
+        app:srcCompat="@drawable/mesa6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
